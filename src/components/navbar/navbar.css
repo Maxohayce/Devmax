@@ -49,11 +49,44 @@
 .navSocial {
 }
 
+@media screen and (min-width: 480px) and (max-width: 1024px) {
+  .navbarLogo {
+    position: absolute;
+    left: 0;
+    top: 1rem;
+  }
+  .navbarLinks_container {
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    height: 13rem;
+    padding: 0rem 2rem;
+    background-color: #042c54;
+    margin-top: 9rem;
+    position: absolute;
+    right: 2rem;
+  }
+
+  .navbarLinks_container-close {
+    display: none;
+  }
+
+  .menuIcon {
+    display: block;
+    right: 3rem;
+    position: absolute;
+    font-size: 1.5rem;
+    color: #f2d03b;
+    background-color: inherit;
+    border: none;
+  }
+}
+
 @media screen and (max-width: 480px) {
   .navbarLogo {
     position: absolute;
     left: -1.5rem;
-    top: 0;
+    top: 1rem;
   }
   .navbarLinks_container {
     flex-direction: column;

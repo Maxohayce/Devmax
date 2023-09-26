@@ -48,8 +48,15 @@
 }
 
 @media screen and (min-width: 480px) and (max-width: 1024px) {
+  .intro {
+    height: 100vh;
+  }
+
   .intro-text {
-    height: 40rem;
+    height: 50rem;
+    margin-top: 16rem;
+    margin-left: 0;
+    width: 60%;
   }
   .intro-text h1 {
     height: 30rem;

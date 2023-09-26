@@ -2,7 +2,7 @@
   width: 15rem;
   z-index: 1;
   position: absolute;
-  top: 14rem;
+  top: 12.5rem;
   right: 9rem;
 }
 
@@ -12,8 +12,8 @@
 
 @media screen and (min-width: 480px) and (max-width: 1024px) {
   .musicPlayer {
-    top: 10.1rem;
-    right: 2.5rem;
+    top: 22rem;
+    right: 5rem;
   }
 }
 
