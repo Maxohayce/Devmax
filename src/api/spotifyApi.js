@@ -1,7 +1,7 @@
 /* https://accounts.spotify.com/authorize?client_id=ca9af35fd3e449b0af13efa080fbd642&response_type=code&redirect_uri=http%3A%2F%2Flocalhost:3000&scope=user-read-currently-playing%20user-modify-playback-state%streaming */
 const TOKEN_ENDPOINT = `https://accounts.spotify.com/api/token`;
 const AfroThugLove = `https://api.spotify.com/v1/playlists/1FM8v5HPJ7GoyMoo5SjOJj?si`;
-const Redirect_uri = "http://Localhost:3000";
+// const Redirect_uri = "http://Localhost:3000";
 const client_id = process.env.REACT_APP_SPOTIFY_CLIENT_ID;
 const client_secret = process.env.REACT_APP_SPOTIFY_CLIENT_SECRET;
 const refresh_token = process.env.REACT_APP_SPOTIFY_REFRESH_TOKEN;
