@@ -10,7 +10,7 @@ const Card = ({ title, details, stack, href }) => {
         <a className="projectCard" href={href} target="_blank" rel="noReferrer">
             <div className="cardTop">
                 <FontAwesomeIcon icon={faFile} className="project-file" />
-                <a href="" target="_blank" rel="noReferrer" className="external-link"><FontAwesomeIcon icon={faUpRightFromSquare} /></a>
+                <a href={href} target="_blank" rel="noReferrer" className="external-link"><FontAwesomeIcon icon={faUpRightFromSquare} /></a>
             </div>
             <div className="cardBottom">
                 <h4>{title}</h4>

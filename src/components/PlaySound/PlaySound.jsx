@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 // import Sound from "react-sound";
 // import SpotifyPlayer from 'react-spotify-player';
 import "./playSound.css";
@@ -6,25 +6,25 @@ import "./playSound.css";
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import { faCloud } from "@fortawesome/free-solid-svg-icons";
 // import inTheLight from "../../Music/in the light.mp3";
-import getNowPlaying from "../../api/spotifyApi";
+// import getNowPlaying from "../../api/spotifyApi";
 
 
 
 
 
-const PlaySound = (handleSongLoading, handleSongPlaying, handleSongFinishedPlaying) => {
-    const [isPlaying, setIsPlaying] = useState(false);
-    const [spotifyURI, setSpotifyURI] = useState("");
+const PlaySound = () => {
+    // const [isPlaying, setIsPlaying] = useState(false);
+    // const [spotifyURI, setSpotifyURI] = useState("");
 
-    useEffect(() => {
+    // useEffect(() => {
 
-        const handler = async () => {
-            const value = await getNowPlaying();
-            setSpotifyURI(value);
-        }
+    //     const handler = async () => {
+    //         const value = await getNowPlaying();
+    //         setSpotifyURI(value);
+    //     }
 
-        handler();
-    }, [])
+    //     handler();
+    // }, [])
 
     const style = {
         borderRadius: 12,

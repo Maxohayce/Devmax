@@ -2,8 +2,8 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 
-import { Footer, Blog, Projects, Header, Contact, About } from "./containers";
-import { Brand, Navbar } from "./components";
+import { Projects, Header, Contact, About } from "./containers";
+import { Navbar } from "./components";
 
 const App = () => {
   return (

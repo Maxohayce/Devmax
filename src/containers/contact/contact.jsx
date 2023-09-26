@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import useContactForm from "../../hooks/useContactForm";
 import Map from "../../components/map/map";
 
@@ -11,7 +11,7 @@ const location = {
 };
 
 const Contact = () => {
-    const { formStatus, formData, handleChange, handleSubmit } = useContactForm();
+    const { formStatus, handleChange, handleSubmit } = useContactForm();
 
     return (
         <div className="contact-form">
