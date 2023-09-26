@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 // import Sound from "react-sound";
 // import SpotifyPlayer from 'react-spotify-player';
 import "./playSound.css";
@@ -6,7 +6,7 @@ import "./playSound.css";
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import { faCloud } from "@fortawesome/free-solid-svg-icons";
 // import inTheLight from "../../Music/in the light.mp3";
-// import getNowPlaying from "../../api/spotifyApi";
+import getNowPlaying from "../../api/spotifyApi";
 
 
 
@@ -14,17 +14,17 @@ import "./playSound.css";
 
 const PlaySound = () => {
     // const [isPlaying, setIsPlaying] = useState(false);
-    // const [spotifyURI, setSpotifyURI] = useState("");
+    const [spotifyURI, setSpotifyURI] = useState("");
 
-    // useEffect(() => {
+    useEffect(() => {
 
-    //     const handler = async () => {
-    //         const value = await getNowPlaying();
-    //         setSpotifyURI(value);
-    //     }
+        const handler = async () => {
+            const value = await getNowPlaying();
+            setSpotifyURI(value);
+        }
 
-    //     handler();
-    // }, [])
+        handler();
+    }, [])
 
     const style = {
         borderRadius: 12,
@@ -37,17 +37,6 @@ const PlaySound = () => {
         <div className="musicPlayer">
             <iframe title="playlist" style={style} src="https://open.spotify.com/embed/playlist/1FM8v5HPJ7GoyMoo5SjOJj?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
 
-            {/* <SpotifyPlayer
-                uri={spotifyURI}
-                size={{
-                    width: 300,
-                    height: 300,
-                }}
-                view={"list"}
-                theme={"white"}
-                allow={"autoplay"}
-
-            /> */}
         </div>
     );
 }

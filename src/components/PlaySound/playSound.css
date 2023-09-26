@@ -19,7 +19,8 @@
 
 @media screen and (max-width: 480px) {
   .musicPlayer {
-    top: 30rem;
-    right: 2rem;
+    top: 6.2rem;
+    right: 11.4rem;
+    width: 200px;
   }
 }
