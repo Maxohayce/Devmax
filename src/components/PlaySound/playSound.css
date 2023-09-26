@@ -1,0 +1,25 @@
+.musicPlayer {
+  width: 15rem;
+  z-index: 1;
+  position: absolute;
+  top: 14rem;
+  right: 9rem;
+}
+
+.cloud {
+  color: #00a1d9;
+}
+
+@media screen and (min-width: 480px) and (max-width: 1024px) {
+  .musicPlayer {
+    top: 10.1rem;
+    right: 2.5rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .musicPlayer {
+    top: 30rem;
+    right: 2rem;
+  }
+}

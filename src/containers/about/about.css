@@ -1,0 +1,155 @@
+.about {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 2rem;
+  font-size: 1.2rem;
+  height: 100%;
+}
+
+.about-left {
+  height: 40.5rem;
+  /* background-color: red; */
+  max-width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  line-height: 1.5rem;
+  color: #00a1d9;
+}
+
+.about-text {
+  min-height: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.skill-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  list-style: none;
+}
+
+.about-text p:nth-child(2) {
+  /* color: #f2d03b; */
+}
+.about-text p:nth-child(3) {
+  color: #f2d03b;
+}
+
+.skill-list li {
+  width: 45%;
+  display: flex;
+}
+
+.skill-list li::before {
+  content: "\27A4";
+  font-size: 0.8rem;
+  color: #f2d03b;
+  display: inline-block;
+  font-weight: bold;
+  width: 2em;
+}
+.about-left h3 {
+  color: #f2d03b;
+  font-size: 2rem;
+}
+
+.about-right {
+  margin-top: -10rem;
+}
+
+.image-container {
+  position: relative;
+
+  & img {
+    width: 18rem;
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    z-index: 2;
+    border-radius: 0.5rem;
+    top: 0rem;
+  }
+
+  & .image-bg1 {
+    z-index: 3;
+    height: 18rem;
+    width: 18rem;
+    position: absolute;
+    background-color: #f2d03b;
+    top: 0rem;
+    opacity: 0.3;
+    border-radius: 0.5rem;
+  }
+}
+
+.about-right:hover {
+  & .image-bg1 {
+    opacity: 0;
+    top: -0.1rem;
+    left: -0.5rem;
+  }
+  & img {
+    top: -0.1rem;
+    left: -0.5rem;
+  }
+  & .image-bg {
+    top: 1.5rem;
+    left: 1.2rem;
+  }
+}
+
+.image-bg {
+  width: 17.5rem;
+  height: 17.5rem;
+  border: 1px solid #f2d03b;
+  border-radius: 0.5rem;
+  position: relative;
+  top: 1rem;
+  left: 1rem;
+}
+
+@media screen and (max-width: 480px) {
+  .about {
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    font-size: 1.125rem;
+  }
+
+  .about-left {
+    height: 65rem;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    line-height: 1.5rem;
+  }
+
+  .skill-list {
+    gap: 2;
+    height: 9rem;
+  }
+
+  .skill-list li {
+    width: 50%;
+  }
+
+  .about-text {
+    min-height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .about-right {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    margin-left: -2rem;
+    /* background-color: red; */
+    width: 80%;
+  }
+}

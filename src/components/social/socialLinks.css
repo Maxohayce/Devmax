@@ -1,0 +1,14 @@
+.socialLinks {
+  width: 9rem;
+  padding: 0.2rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.social {
+  color: #f2d03b;
+}
+
+.social:hover {
+  color: #00a1d9;
+}
