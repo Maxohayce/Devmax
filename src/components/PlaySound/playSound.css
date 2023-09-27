@@ -1,26 +1,31 @@
 .musicPlayer {
-  width: 15rem;
-  z-index: 1;
-  position: absolute;
-  top: 12.5rem;
-  right: 9rem;
+  width: 19rem;
+  margin-bottom: 10rem;
+  margin-right: -4rem;
 }
 
-.cloud {
-  color: #00a1d9;
+.player {
+  height: 300px;
 }
 
 @media screen and (min-width: 480px) and (max-width: 1024px) {
   .musicPlayer {
-    top: 22rem;
-    right: 5rem;
+    top: 11rem;
+    right: 3rem;
+    position: absolute;
+    margin: 0;
   }
 }
 
 @media screen and (max-width: 480px) {
   .musicPlayer {
-    top: 7rem;
-    right: 11rem;
-    width: 200px;
+    align-self: center;
+    width: 94%;
+    justify-content: center;
+    margin: 0;
+  }
+
+  .player {
+    height: 100%;
   }
 }
