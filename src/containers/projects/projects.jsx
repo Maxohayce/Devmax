@@ -5,8 +5,8 @@ import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import CardDetails from "../../components/card/constant";
 
 import "./projects.css";
-import Dubem from "../../assets/dubem.jpg";
-import learnable from "../../assets/learnable.png";
+import pressplay from "../../assets/pressplay.png";
+import tribe from "../../assets/tribe.png";
 
 import Card from "../../components/card/card";
 
@@ -22,43 +22,43 @@ const Projects = () => {
                 <div className="project">
                     <div className="projectDetails">
                         <h6>Featured Project</h6>
-                        <h3>Learnable</h3>
-                        <p>A redesign of the learnable website showcase deep grasp of all basic react concepts without functionalities</p>
+                        <h3>Free-Tribe Network</h3>
+                        <p>An NGO website built with Next.js that uses server actions to fetch content from WordPress. I worked on the resources page and the who we are page, then I connected the the website to wordpress as a CMS.</p>
                         <ul className="stack">
-                            <li>React</li>
-                            <li>css</li>
-                            <li>Firebase</li>
-                            <li>Firebase</li>
+                            <li>Typescript</li>
+                            <li>Tailwind</li>
+                            <li>Wordpress</li>
+                            <li>Next</li>
                             <li>Firebase</li>
                         </ul>
                         <span className="projectLinks">
-                            <a href="https://github.com/Maxohayce/Press-Play" target="_blank" rel="noReferrer" className="Github-social">
+                            <a href="https://github.com/amjedidiah/free-tribe-network" target="_blank" rel="noReferrer" className="Github-social">
                                 <FontAwesomeIcon icon={faGithub} />
                             </a>
-                            <a href="https://infallible-austin-bf6778.netlify.app/" target="_blank" rel="noReferrer" className="external-link">
+                            <a href="https://free-tribe-network.vercel.app/" target="_blank" rel="noReferrer" className="external-link">
                                 <FontAwesomeIcon icon={faUpRightFromSquare} />
                             </a>
                         </span>
                     </div>
                     <div className="projectImage">
                         <div className="projectBg" />
-                        <img src={learnable} alt="learnable" />
+                        <img src={tribe} alt="learnable" />
                     </div>
                 </div>
                 <div className="project">
                     <div className="projectDetails">
                         <h6>Featured Project</h6>
-                        <h3>AnyLease</h3>
-                        <p>A website where Users can lease or get equipments not currently needed or in use for a token, A HNG project</p>
+                        <h3>Press Play</h3>
+                        <p>A podcast platform created at the end of genesys learnable program. I worked on the UI along with a colleague, implemented the firebase connection and fetched the initial dummy podcasts from an api</p>
                         <ul className="stack">
+                            <li>Javascript</li>
+                            <li>React Lottie</li>
+                            <li>Firebase</li>
                             <li>React</li>
-                            <li>Tailwind</li>
-                            <li>Firebase</li>
-                            <li>Express</li>
-                            <li>Firebase</li>
+                            <li>Css</li>
                         </ul>
                         <span className="projectLinks">
-                            <a href="https://github.com/Maxohayce/Press-Play" target="_blank" rel="noReferrer" className="Github-social">
+                            <a href="https://github.com/amjedidiah/dad" target="_blank" rel="noReferrer" className="Github-social">
                                 <FontAwesomeIcon icon={faGithub} />
                             </a>
                             <a href="https://infallible-austin-bf6778.netlify.app/" target="_blank" rel="noReferrer" className="external-link">
@@ -68,14 +68,14 @@ const Projects = () => {
                     </div>
                     <div className="projectImage">
                         <div className="projectBg" />
-                        <img src={Dubem} alt="" />
+                        <img src={pressplay} alt="press-play" />
                     </div>
                 </div>
 
             </section>
             <section className="otherProjects">
-                {CardDetails.map((item) => {
-                    return <Card href={item.href} title={item.title} details={item.details} stack={item.stack} />
+                {CardDetails.map((item, i) => {
+                    return <Card key={item.title + i} href={item.href} title={item.title} details={item.details} stack={item.stack} />
                 })}
             </section>
         </div>

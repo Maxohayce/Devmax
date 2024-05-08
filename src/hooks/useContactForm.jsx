@@ -4,17 +4,18 @@ import emailjs from "@emailjs/browser";
 const useContactForm = () => {
   const [formStatus, setFormStatus] = useState("Send Message");
   const [formData, setFormData] = useState({
-    name: "",
-    email: "",
+    from_name: "",
+    from_email: "",
     subject: "",
     message: "",
   });
 
   const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
+    const { name, value } = e.target;
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      [name]: value,
+    }));
   };
 
   const handleSubmit = (e) => {
@@ -25,24 +26,21 @@ const useContactForm = () => {
     const templateId = process.env.REACT_APP_templateId;
     const userId = process.env.REACT_APP_publicKey;
 
-    const templateParams = {
-      from_name: formData.name,
-      from_email: formData.email,
-      to_name: "DevMax",
-      message: formData.message,
-    };
-
     emailjs
-      .send(serviceId, templateId, templateParams, userId)
+      .send(serviceId, templateId, formData, userId) // Pass formData directly
       .then((response) => {
         console.log("Email sent successfully", response);
         setFormStatus("Email Sent!");
         setFormData({
-          name: "",
-          email: "",
+          from_name: "",
+          from_email: "",
           subject: "",
           message: "",
         });
+
+        setTimeout(() => {
+          setFormStatus("Send Message");
+        }, 3000);
       })
       .catch((error) => {
         console.error("Error sending email:", error);

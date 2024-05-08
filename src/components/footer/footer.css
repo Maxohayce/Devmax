@@ -1,0 +1,12 @@
+.footer {
+  display: flex;
+  height: 6rem;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  div {
+    font-size: 1.2rem;
+    color: #042c54;
+    font-weight: bold;
+  }
+}

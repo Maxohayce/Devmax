@@ -5,7 +5,7 @@ import './map.css';
 
 const Map = ({ location, zoomLevel }) => (
     <div className="map">
-        <h2 className="map-h2">Come Visit my Work Setup or Employ Remotely</h2>
+        <h2 className="map-h2">Get in touch by sending an email, whatsapp or linkedin.</h2>
 
         <div className="google-map">
             <GoogleMapReact

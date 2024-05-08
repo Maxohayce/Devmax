@@ -3,11 +3,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFile, faUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
 
 import "./card.css";
-// import Dubem from "../../assets/dubem.jpg";
 
 const Card = ({ title, details, stack, href }) => {
     return (
-        <a className="projectCard" href={href} target="_blank" rel="noReferrer">
+        <div className="projectCard" href={href} target="_blank" rel="noReferrer">
             <div className="cardTop">
                 <FontAwesomeIcon icon={faFile} className="project-file" />
                 <a href={href} target="_blank" rel="noReferrer" className="external-link"><FontAwesomeIcon icon={faUpRightFromSquare} /></a>
@@ -21,7 +20,7 @@ const Card = ({ title, details, stack, href }) => {
                     <li>{stack[2]}</li>
                 </ul>
             </div>
-        </a>
+        </div>
     );
 }
 

@@ -2,6 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 2rem;
 }
 
 .contact-left {
@@ -36,7 +37,7 @@
   width: 49%;
   padding: 1rem;
   border-radius: 0.5rem;
-  background-color: grey;
+  background-color: #cecfd0;
   opacity: 0.4;
 }
 .contact-intro input::placeholder {
@@ -48,7 +49,7 @@
   width: 100%;
   padding: 1rem;
   border-radius: 0.5rem;
-  background-color: grey;
+  background-color: #cecfd0;
   opacity: 0.4;
 }
 
@@ -62,7 +63,7 @@
   height: 10rem;
   padding: 1rem;
   border-radius: 0.5rem;
-  background-color: grey;
+  background-color: #cecfd0;
   opacity: 0.4;
 }
 

@@ -1,12 +1,12 @@
 .projectCard {
   display: flex;
   flex-direction: column;
-  width: 21rem;
+  width: 24rem;
   background-color: #042c54;
   height: 18rem;
   padding: 1rem;
   transition: all 500ms ease-in-out;
-  margin: 1rem;
+  margin-bottom: 4rem;
 }
 
 .projectCard:hover {
@@ -45,4 +45,18 @@
 
 .cardBottom h4 {
   font-size: 2rem;
+}
+
+.cardBottom > .stack > li {
+  color: #f2d03b;
+}
+
+@media screen and (min-width: 480px) and (max-width: 1024px) {
+  .projectCard {
+    width: 27rem;
+  }
+
+  .projectCard {
+    height: 21rem;
+  }
 }

@@ -11,28 +11,61 @@ const location = {
 };
 
 const Contact = () => {
-    const { formStatus, handleChange, handleSubmit } = useContactForm();
+    const { formStatus, formData, handleChange, handleSubmit } = useContactForm();
 
     return (
         <div className="contact-form">
             <div className="contact-left">
-                <form action="" onSubmit={handleSubmit} method="post">
+                <form onSubmit={handleSubmit} method="post">
                     <h3>Would you like to get in Touch ?</h3>
-                    <p></p>
                     <span className="contact-intro">
-                        <input onChange={handleChange} type="text" placeholder="Name" required />
-                        <input onChange={handleChange} type="text" placeholder="Email" required />
-                    </span> <br />
-                    <input onChange={handleChange} className="subject" type="text" placeholder="Subject" required /><br />
-                    <textarea onChange={handleChange} placeholder="Message" id="message" required></textarea><br />
-                    <button className="contact-btn" type="submit">{formStatus}</button>
+                        <input
+                            onChange={handleChange}
+                            type="text"
+                            placeholder="Name"
+                            name="from_name" // Add name attribute
+                            value={formData.from_name}
+                            required
+                        />
+                        <input
+                            onChange={handleChange}
+                            type="email"
+                            placeholder="Email"
+                            name="from_email" // Add name attribute
+                            value={formData.from_email}
+                            required
+                        />
+                    </span>
+                    <br />
+                    <input
+                        onChange={handleChange}
+                        className="subject"
+                        type="text"
+                        placeholder="Subject"
+                        name="subject" // Add name attribute
+                        value={formData.subject}
+                        required
+                    />
+                    <br />
+                    <textarea
+                        onChange={handleChange}
+                        placeholder="Message"
+                        id="message"
+                        name="message" // Add name attribute
+                        value={formData.message}
+                        required
+                    ></textarea>
+                    <br />
+                    <button className="contact-btn" type="submit">
+                        {formStatus}
+                    </button>
                 </form>
             </div>
             <div className="contact-address">
                 <Map location={location} zoomLevel={17} />
             </div>
         </div>
-    )
+    );
 };
 
 export default Contact;

@@ -101,6 +101,8 @@
   padding: 2rem;
   width: 45rem;
   background-color: #042c54;
+  box-shadow: 0px 12px 30px 0px rgba(0, 0, 0, 0.2);
+  transition: all 800ms cubic-bezier(0.19, 1, 0.22, 1);
   color: #00a1d9;
   margin: 1.5rem 0rem;
   opacity: 0.8;
@@ -131,8 +133,8 @@
 }
 
 .otherProjects {
-  height: 100vh;
-  width: 80%;
+  height: auto;
+  width: 85%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -160,6 +162,11 @@
   .projectDetails {
   }
 
+  .projectImage {
+    left: 11.8rem;
+    width: 60%;
+  }
+
   .projectDetails p {
     width: 30rem;
   }
@@ -176,6 +183,10 @@
     width: 100%;
   }
 
+  .projectBg {
+    opacity: 0.5;
+  }
+
   .portfolio p {
     width: 100%;
   }
@@ -185,6 +196,7 @@
     flex-direction: column;
     align-items: flex-start;
     width: 80%;
+    margin-bottom: 2rem;
   }
 
   .project {
@@ -203,6 +215,7 @@
     height: 100%;
     padding: 1rem;
   }
+
   .projectDetails h3,
   .stack {
     color: #042c54;
@@ -233,5 +246,6 @@
   .otherProjects {
     height: 130rem;
     margin: 0;
+    margin-top: 2rem;
   }
 }

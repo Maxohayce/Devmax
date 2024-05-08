@@ -20,7 +20,7 @@
 @media screen and (max-width: 480px) {
   .musicPlayer {
     align-self: center;
-    width: 94%;
+    width: 100%;
     justify-content: center;
     margin: 0;
   }

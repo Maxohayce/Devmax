@@ -12,10 +12,10 @@
 }
 
 .intro-text button {
-  max-width: 12rem;
+  min-width: 12rem;
   border-radius: 0.2rem;
   padding: 1rem;
-  border: 0.1px solid #042c54;
+  border: 0.1px solid #00a1d9;
   background-color: inherit;
   color: #00a1d9;
   letter-spacing: 1px;

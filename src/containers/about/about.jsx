@@ -1,7 +1,13 @@
 import React from "react";
 import "./about.css";
+import { motion } from "framer-motion";
 
 import Dubem from "../../assets/dubem.jpg";
+
+
+const skills = [
+    { title: "NextJS" }, { title: "NodeJS" }, { title: "ReactJS" }, { title: "Google Analytics" }, { title: "Google Ads" }, { title: "Typescript" }
+]
 
 const About = () => {
     return (
@@ -15,20 +21,29 @@ const About = () => {
                 </div>
                 <p>Here are a few technologies and skills I've been able to grasp over the past few years</p>
                 <ul className="skill-list">
-                    <li>JavaScript</li>
-                    <li>NodeJS</li>
-                    <li>ReactJS</li>
-                    <li>Google Analytics</li>
-                    <li>Google Ads</li>
-                    <li>Typescript</li>
+                    {skills.map((skill, i) => {
+                        return <motion.li
+                            initial={{ x: '-100vw' }}
+                            animate={{ x: '0' }}
+                            transition={{ delay: 2, duration: 5, type: 'spring', stiffness: 500 }}
+                            key={skill.title + i}>{skill.title}</motion.li>
+                    })}
                 </ul>
             </div>
             <div className="about-right">
-                <div className="image-container">
+                <motion.div
+                    initial={{ y: '-200vw' }}
+                    animate={{ y: 0, zIndex: 2 }}
+                    transition={{ delay: 0.5, duration: 3, type: 'spring', stiffness: 40 }}
+                    className="image-container">
                     <div className="image-bg1" />
                     <img src={Dubem} alt="Dubem" />
-                </div>
-                <div className="image-bg" />
+                </motion.div>
+                <motion.div
+                    initial={{ y: '200vw' }}
+                    animate={{ y: 0 }}
+                    transition={{ delay: 0.5, duration: 0.2 }}
+                    className="image-bg" />
             </div>
         </div>
     )

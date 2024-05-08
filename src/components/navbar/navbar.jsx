@@ -1,9 +1,10 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { motion, AnimatePresence } from "framer-motion";
 
 import "./navbar.css";
 import Dubem from "../../assets/dubem.jpg";
-import { SocialLinks } from "../index";
+import { Resume } from "../index";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 
@@ -28,27 +29,21 @@ const Menu = [
     },
 ];
 
+
 const Navbar = () => {
     const [menuOpen, setMenuOpen] = useState(false);
-    const NavRef = useRef(null);
+    const [isMobile, setIsMobile] = useState(false);
+
+    // Function to check if device is mobile
+    const checkIsMobile = () => {
+        setIsMobile(window.innerWidth <= 768); // Adjust the width for mobile devices
+    };
 
     useEffect(() => {
-        const handleClickOutside = (event) => {
-            if (NavRef.current && !NavRef.current.contains(event.target)) {
-                setMenuOpen(false);
-            }
-        };
-
-        const handleScroll = () => {
-            setMenuOpen(false);
-        };
-
-        document.addEventListener("mousedown", handleClickOutside);
-        window.addEventListener("scroll", handleScroll);
-
+        checkIsMobile(); // Initial check
+        window.addEventListener("resize", checkIsMobile); // Check on window resize
         return () => {
-            document.removeEventListener("mousedown", handleClickOutside);
-            window.removeEventListener("scroll", handleScroll);
+            window.removeEventListener("resize", checkIsMobile); // Cleanup listener
         };
     }, []);
 
@@ -56,25 +51,57 @@ const Navbar = () => {
         setMenuOpen(!menuOpen);
     };
 
+    const menuVars = {
+        open: {
+            scale: 1,
+            transition: {
+                delay: 0.15,
+            },
+        },
+        close: {
+            scale: 0,
+            transition: {
+                type: "spring",
+                duration: 0.05,
+                delayChildren: 0.2,
+                staggerChildren: 0.5,
+            },
+        },
+    }
+
+    const menuItem = {
+        closed: { x: -35, opacity: 0 },
+        open: { x: 8, opacity: 1 },
+        transition: { opacity: { duration: 3 } },
+    };
+
     return (
-        <nav className="navbar">
+        <nav
+            className="navbar">
             <div className="navbarLinks">
                 <div className="navbarLogo">
                     <Link exact to="/">
                         <img src={Dubem} alt="myLogo" />
                     </Link>
                 </div>
-                <ul
-                    ref={NavRef}
-                    className={`navbarLinks_container ${menuOpen ? "navbarLinks_container" : "navbarLinks_container-close"}`}
-                >
-                    {Menu.map((item, id) => (
-                        <Link key={id} onClick={toggleMenu} className={item.cName} to={item.path}>
-                            <li key={id}>{item.title}</li>
-                        </Link>
-                    ))}
-                    <SocialLinks className="navSocial" />
-                </ul>
+                <AnimatePresence>
+                    <motion.ul
+                        variants={menuVars}
+                        initial="closed"
+                        animate={isMobile ? (menuOpen ? "open" : "closed") : "open"}
+                        exit="closed"
+                        className={`navbarLinks_container ${menuOpen ? "navbarLinks_container" : "navbarLinks_container-close"}`}
+                    >
+                        {Menu.map((item) => (
+                            <Link key={item.id} onClick={toggleMenu} className={item.cName} to={item.path}>
+                                <motion.li variants={menuItem} key={item.id}>{item.title}</motion.li>
+                            </Link>
+                        ))}
+                        <div className="navSocial">
+                            <Resume />
+                        </div>
+                    </motion.ul>
+                </AnimatePresence>
                 <button className="menuIcon" onClick={toggleMenu}>
                     <FontAwesomeIcon icon={menuOpen ? faTimes : faBars} />
                 </button>
